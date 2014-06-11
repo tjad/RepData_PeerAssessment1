@@ -53,8 +53,13 @@ legend("topright",
 ```
 
 ## What is the average daily activity pattern?
+```{r}
+avg_steps_per_interval <- aggregate(steps ~ interval, clean_data, mean)
+plot(avg_steps_per_interval, type='l')
 
-
+highest_interval_step_avg <- avg_steps_per_interval[which.max(avg_steps_per_interval$steps),]
+sprintf('Interval with highest step average: Interval %i with %f steps', highest_interval_step_avg$interval, highest_interval_step_avg$steps)
+```
 
 ## Imputing missing values
 
