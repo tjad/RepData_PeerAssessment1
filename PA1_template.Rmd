@@ -1,13 +1,56 @@
 # Reproducible Research: Peer Assessment 1
 
 
+## Global settings
+```{r}
+options(digits = 7) #Option to fix strange results when using summary with knitr
+
+```
+
 ## Loading and preprocessing the data
 
+```{r}
 
+if(!file.exists('activity.csv')){
+  message('Attempting to extract activity data...')
+  if(file.exists('activity.zip')){
+    unzip('activity.zip')
+    message('Successfully unzipped activity data')
+  }
+  else{
+    message('Failed to extract data, activity.zip not found')
+  }
+    
+}
+
+activity_data <- read.csv('activity.csv')
+
+#convert $date from factor to Date
+activity_data$date <- as.Date(activity_data$date)
+#remove na values
+clean_data <- activity_data[which(activity_data$steps > 0),]
+```
 
 ## What is mean total number of steps taken per day?
+```{r}
+#prepare - here as this data is specific to this section
+steps_per_day <- aggregate(steps ~ date, clean_data, sum)
+step_summary <- summary.default(steps_per_day$steps)
+#Create histogram plot
+hist(steps_per_day$steps, main='Total steps per day', xlab='Average Steps', breaks=10)
 
+#plot mean
+abline(v=step_summary['Mean'], col='green')
+#plot median
+abline(v=step_summary['Median'], col='blue', lty=2)
 
+legend("topright", 
+       c(sprintf("Mean(%i)", step_summary['Mean']), 
+         sprintf("Median(%i)", step_summary['Median'])), 
+       col=c("green", "blue"), 
+       lwd=1)
+
+```
 
 ## What is the average daily activity pattern?
 
