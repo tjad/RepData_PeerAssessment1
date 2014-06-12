@@ -292,7 +292,7 @@ legend(&quot;topright&quot;,
 
 <h4>Report</h4>
 
-<p>Imputing the missing data with the average steps of respective intervals seems to largely increase the high end values shifting the gap to the right more(i.e between 25,000 and 30,000), The mean and median both increase and diverge with the imputed data but the shape of the distribution does not change much.</p>
+<p>Imputing the missing data with the average steps of respective intervals seems to largely increase the high end values shifting the gap to the right more(i.e between 25,000 and 30,000), The mean and median both increase and have a more distinguished margin with the imputed data but the shape of the distribution does not change much.</p>
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
@@ -315,7 +315,7 @@ ggplot(na.omit(activity_data), aes(x=interval, y=steps)) +
 
 <h4>Report</h4>
 
-<p>There seems to be an indication that the amount of walking may be enhanced over the weekend, which may be possible that people walk less during the week due to their working environment, i.e sitting at a computer. There is a clear margin between average steps in the morning between 600 and 800, on weekends it is far less and this could be among many reasons including, but not limited to hangovers, procrastination, and just pure relaxation.</p>
+<p>There seems to be an indication that the amount of walking may be increased over the weekend, which may be possible that people walk less during the week due to their working environment, i.e sitting at a computer. There is a clear margin between average steps in the morning between 600 and 800, on weekends it is far less and this could be among many reasons including, but not limited to hangovers, procrastination, and just pure relaxation. And it should be noted that the weekend lack of steps during the interval 600 to 800 impacts the initial graph(part 1) causing the collapse in shape during that interval.</p>
 
 </body>
 

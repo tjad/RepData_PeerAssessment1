@@ -123,7 +123,7 @@ legend("topright",
 ![plot of chunk Imputing missing values](figure/Imputing missing values.png) 
 
 #### Report
-Imputing the missing data with the average steps of respective intervals seems to largely increase the high end values shifting the gap to the right more(i.e between 25,000 and 30,000), The mean and median both increase and diverge with the imputed data but the shape of the distribution does not change much.
+Imputing the missing data with the average steps of respective intervals seems to largely increase the high end values shifting the gap to the right more(i.e between 25,000 and 30,000), The mean and median both increase and have a more distinguished margin with the imputed data but the shape of the distribution does not change much.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -149,4 +149,4 @@ ggplot(na.omit(activity_data), aes(x=interval, y=steps)) +
 ![plot of chunk Activity pattern differences between weekday and weekend](figure/Activity pattern differences between weekday and weekend.png) 
 #### Report
 
-There seems to be an indication that the amount of walking may be enhanced over the weekend, which may be possible that people walk less during the week due to their working environment, i.e sitting at a computer. There is a clear margin between average steps in the morning between 600 and 800, on weekends it is far less and this could be among many reasons including, but not limited to hangovers, procrastination, and just pure relaxation.
+There seems to be an indication that the amount of walking may be increased over the weekend, which may be possible that people walk less during the week due to their working environment, i.e sitting at a computer. There is a clear margin between average steps in the morning between 600 and 800, on weekends it is far less and this could be among many reasons including, but not limited to hangovers, procrastination, and just pure relaxation. And it should be noted that the weekend lack of steps during the interval 600 to 800 impacts the initial graph(part 1) causing the collapse in shape during that interval.
